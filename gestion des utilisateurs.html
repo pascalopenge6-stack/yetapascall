@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yetagroupe - Gestion des Utilisateurs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2badee",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111618] dark:text-white font-display">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark flex flex-col justify-between p-4 sticky top-0 h-screen">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary rounded-lg size-10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined filled-icon">local_bar</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111618] dark:text-white text-base font-bold leading-none">Yetagroupe</h1>
+<p class="text-[#617c89] text-xs font-normal">Gestion de Bar Pro</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617c89] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Tableau de bord</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617c89] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<p class="text-sm font-medium">Commandes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined filled-icon">group</span>
+<p class="text-sm font-bold">Utilisateurs</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617c89] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<p class="text-sm font-medium">Stocks</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617c89] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Paramètres</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4 border-t border-gray-100 dark:border-gray-800 pt-4">
+<div class="flex items-center gap-3 px-2">
+<div class="size-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xs">JD</div>
+<div class="flex flex-col">
+<p class="text-sm font-medium dark:text-white">Jean Dupont</p>
+<p class="text-[10px] text-[#617c89] uppercase tracking-wider font-bold">Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- PageHeading -->
+<header class="p-8 pb-4">
+<div class="flex flex-wrap items-end justify-between gap-4 max-w-6xl mx-auto">
+<div class="flex flex-col gap-2">
+<h2 class="text-[#111618] dark:text-white text-3xl font-black tracking-tight">Gestion des Utilisateurs</h2>
+<p class="text-[#617c89] text-base font-normal max-w-lg">
+                            Gérez les accès sécurisés pour vos 3 collaborateurs. Assurez la traçabilité des actions effectuées sur la plateforme.
+                        </p>
+</div>
+<button class="flex items-center justify-center gap-2 rounded-lg h-11 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined">person_add</span>
+<span>Ajouter un compte</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-6xl mx-auto w-full">
+<!-- User Quick Stats (Custom Component for professional look) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-4 rounded-xl flex items-center gap-4">
+<div class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 p-2 rounded-lg">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-xs font-medium text-[#617c89]">Sécurité</p>
+<p class="text-lg font-bold dark:text-white">Active</p>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-4 rounded-xl flex items-center gap-4">
+<div class="bg-primary/10 text-primary p-2 rounded-lg">
+<span class="material-symbols-outlined">supervised_user_circle</span>
+</div>
+<div>
+<p class="text-xs font-medium text-[#617c89]">Comptes Utilisés</p>
+<p class="text-lg font-bold dark:text-white">3 / 3</p>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-4 rounded-xl flex items-center gap-4">
+<div class="bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 p-2 rounded-lg">
+<span class="material-symbols-outlined">history</span>
+</div>
+<div>
+<p class="text-xs font-medium text-[#617c89]">Dernière Activité</p>
+<p class="text-lg font-bold dark:text-white">Il y a 5 min</p>
+</div>
+</div>
+</div>
+<!-- User Cards Section -->
+<div class="flex flex-col gap-6">
+<!-- Card 1: Admin -->
+<div class="flex items-center justify-between gap-6 rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-5 flex-1">
+<div class="relative">
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-full border-2 border-primary" data-alt="Photo de profil de Jean Dupont Administrateur" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApXzCz3MgisR9MEoFzLcW5U51G1Sw_iMGToAvwiB1KaBGWGM_NlgCx0sAuCYi0hCcsBGnLZsXULbVAtquKOgaO7U7eg0V0QzdKYBIYFzQ-vktHMtblNjF0sPJVOCxTkVg8Yy-a_eSyoqa6eKrRGpcRilgfo15sbjX2VTdYrCiCoj6vB3bDsPW2Hfw8wU9OfnsM1JLHOLkJXARiUxj7G1L5IuaiP6I-Ie8vLPOOzGWiBmeSkJs_iJjFDB4jEIZSQN3KwhoUH14");'></div>
+<div class="absolute bottom-0 right-0 size-4 bg-green-500 border-2 border-white dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-[#111618] dark:text-white text-lg font-bold leading-tight">Jean Dupont</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-primary text-white tracking-widest">Admin</span>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-[#617c89] text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">mail</span> jean.d@yetagroupe.com
+                                    </p>
+<p class="text-[#617c89] text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Connecté il y a 5 min
+                                    </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-gray-50 dark:bg-gray-800 text-[#111618] dark:text-white text-sm font-medium hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+<span>Sécurité</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 border border-gray-200 dark:border-gray-700 text-[#111618] dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Modifier</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Server 1 -->
+<div class="flex items-center justify-between gap-6 rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-5 flex-1">
+<div class="relative">
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-full border-2 border-gray-100 dark:border-gray-800" data-alt="Photo de profil de Marie Lefebvre Serveur" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSXvBGN4_x_qV-hQiXs9qoqHMU83Li2WFh1dwNsTp-NiypgDLjD2cDLR1LoqCDrfc3-S6ivNk8lBjXx26Gt2gyVMwClO9AxtWIRGLKj8sNiiixu1tJzyxzidz-zPEqTtdWc0OQlQqIMxaOv7MIZdCx7x2YpXxvV5DHdxoGC6TlPaiA8TJ7y6YgZZjndBSgGpJWWb6ORHaf5Ymfqo-OPqSOEx7ByimHdr7SokKW4O3HTCQ0RmpSDnS27-8fYXxXBzwLtVnVBaw");'></div>
+<div class="absolute bottom-0 right-0 size-4 bg-gray-300 border-2 border-white dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-[#111618] dark:text-white text-lg font-bold leading-tight">Marie Lefebvre</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-gray-100 dark:bg-gray-800 text-[#617c89] tracking-widest">Serveur</span>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-[#617c89] text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">mail</span> marie.l@yetagroupe.com
+                                    </p>
+<p class="text-[#617c89] text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Connectée hier
+                                    </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-gray-50 dark:bg-gray-800 text-[#111618] dark:text-white text-sm font-medium hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+<span>Sécurité</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 border border-gray-200 dark:border-gray-700 text-[#111618] dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Modifier</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Server 2 -->
+<div class="flex items-center justify-between gap-6 rounded-xl bg-white dark:bg-background-dark p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-5 flex-1">
+<div class="relative">
+<div class="size-16 bg-center bg-no-repeat bg-cover rounded-full border-2 border-gray-100 dark:border-gray-800" data-alt="Photo de profil de Lucas Martin Serveur" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbzHA5JQnGcefVpxcX76ksgSJWxNZ5v6Fdsprl9l8J6mXqytTqDM67f6wqfz5dS623V5IL0_ln6PipncsNgnH27zA0LSyGuhjwiXnD2mkCZ3JpkuqPUdOGByEjp6zR6PFx3c-z1I__NKF2PvCyNjYdEw9MVt92ntsUvwTbjRlTC33pmT2Oey7zrydfWPnfG6v0ENWNwCfzUz90w0CTTMrmbWbL5rRrZSm5X8WOmb9Zt8-MEqO7rLojh9E8o1LNEL1trBP99N4");'></div>
+<div class="absolute bottom-0 right-0 size-4 bg-green-500 border-2 border-white dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<p class="text-[#111618] dark:text-white text-lg font-bold leading-tight">Lucas Martin</p>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-gray-100 dark:bg-gray-800 text-[#617c89] tracking-widest">Serveur</span>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-[#617c89] text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">mail</span> lucas.m@yetagroupe.com
+                                    </p>
+<p class="text-[#617c89] text-sm font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Connecté maintenant
+                                    </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-gray-50 dark:bg-gray-800 text-[#111618] dark:text-white text-sm font-medium hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+<span>Sécurité</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 border border-gray-200 dark:border-gray-700 text-[#111618] dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Modifier</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="mt-12 p-6 rounded-xl bg-primary/5 border border-primary/20 flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">info</span>
+<div>
+<h4 class="text-sm font-bold text-primary mb-1">Limite du Plan Actuel</h4>
+<p class="text-sm text-[#617c89]">Vous utilisez actuellement la version Standard limitée à 3 comptes utilisateurs. Pour ajouter plus de collaborateurs, veuillez <a class="font-bold underline decoration-primary/30" href="#">mettre à niveau votre forfait</a>.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
