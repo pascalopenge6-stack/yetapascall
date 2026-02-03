@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accueil Yetagroupe - Gestion de Bar Professionnelle</title>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2badee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111618] dark:text-white transition-colors duration-300">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#f0f3f4] dark:border-[#1e2d35] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 lg:px-20">
+<div class="flex items-center gap-3">
+<div class="text-primary size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-tight">Yetagroupe</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-10">
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Tarifs</a>
+<a class="text-[#111618] dark:text-gray-300 text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90">
+<span class="truncate">Se connecter</span>
+</button>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#f0f3f4] dark:bg-gray-800 text-[#111618] dark:text-white text-sm font-bold transition-all hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="truncate">Découvrir</span>
+</button>
+</div>
+</div>
+</header>
+<main class="mx-auto max-w-[1280px]">
+<!-- HeroSection -->
+<section class="p-6 lg:px-20 lg:py-10">
+<div class="relative overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat" data-alt="Intérieur d'un bar lounge moderne et luxueux avec un éclairage d'ambiance" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(16, 28, 34, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnue4Gha4SACs0_cTmE-FZ12mhEbu6eAUb1Wzr75bQWXEULaRR7nDo9DGvS8-NWBpBzGZGvEtJnKPTPugiQLiyZIhij8N5mYBshEvaKe5ID1ldH34jLIBD9RglKwailVbz7GdGZKM_VuiZC4Ry8HzQZhezuLfaIDYRbI3OKrPWgQ6aO-n9dItI_-8D5ACNjs3VuJvCmtH-e5gr5gUVRt0IqbT78Rzqoou0MUGwQvuIHSeS3UiNuWPi85P5-QohP22MbybqpKg");'>
+<div class="flex min-h-[560px] flex-col items-center justify-center gap-8 p-8 text-center @container">
+<div class="max-w-[800px] flex flex-col gap-4">
+<h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-6xl">
+                            Gérez votre bar avec élégance et précision
+                        </h1>
+<p class="text-white/90 text-lg md:text-xl font-normal leading-relaxed">
+                            La plateforme collaborative tout-en-un pour optimiser vos opérations, vos stocks et votre rentabilité au quotidien.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-lg font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
+<span class="truncate">Découvrir la solution</span>
+</button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-white/10 backdrop-blur-md border border-white/20 text-white text-lg font-bold hover:bg-white/20 transition-all">
+<span class="truncate">Se connecter</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FeatureSection -->
+<section class="px-6 py-16 lg:px-20">
+<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-4 text-center items-center">
+<h2 class="text-[#111618] dark:text-white text-3xl font-bold md:text-4xl tracking-tight">
+                        Nos Services
+                    </h2>
+<div class="h-1.5 w-20 bg-primary rounded-full"></div>
+<p class="text-[#617c89] dark:text-gray-400 text-lg max-w-[720px]">
+                        Des outils puissants et intuitifs conçus spécifiquement pour les professionnels de la restauration et du bar.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="group flex flex-col gap-5 rounded-xl border border-[#dbe2e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/50">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">bar_chart</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111618] dark:text-white text-xl font-bold">Pilotage en temps réel</h3>
+<p class="text-[#617c89] dark:text-gray-400 text-base leading-relaxed">
+                                Suivez vos indicateurs clés de performance instantanément sur votre tableau de bord personnalisé.
+                            </p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="group flex flex-col gap-5 rounded-xl border border-[#dbe2e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/50">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">inventory_2</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111618] dark:text-white text-xl font-bold">Gestion de stock intelligente</h3>
+<p class="text-[#617c89] dark:text-gray-400 text-base leading-relaxed">
+                                Automatisez vos commandes et vos inventaires avec une précision chirurgicale pour éviter les ruptures.
+                            </p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="group flex flex-col gap-5 rounded-xl border border-[#dbe2e6] dark:border-gray-800 bg-white dark:bg-gray-900 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/50">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-[#111618] dark:text-white text-xl font-bold">Outils Collaboratifs</h3>
+<p class="text-[#617c89] dark:text-gray-400 text-base leading-relaxed">
+                                Connectez vos équipes en temps réel pour assurer un service fluide, rapide et une communication sans faille.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTASection -->
+<section class="px-6 py-10 lg:px-20">
+<div class="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 md:p-16">
+<div class="flex flex-col items-center gap-8 text-center">
+<div class="flex flex-col gap-4">
+<h2 class="text-[#111618] dark:text-white text-3xl font-black md:text-5xl max-w-[800px] leading-tight">
+                            Prêt à transformer la gestion de votre établissement ?
+                        </h2>
+<p class="text-[#617c89] dark:text-gray-300 text-lg md:text-xl max-w-[700px] mx-auto">
+                            Rejoignez les centaines de bars qui font confiance à Yetagroupe pour propulser leur croissance.
+                        </p>
+</div>
+<div class="flex flex-wrap justify-center gap-4 w-full">
+<button class="flex min-w-[240px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-lg font-bold shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all">
+<span class="truncate">Commencer maintenant</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-[#f0f3f4] dark:border-gray-800 bg-white dark:bg-background-dark">
+<div class="mx-auto max-w-[1280px] px-6 py-12 lg:px-20 flex flex-col gap-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="text-primary size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#111618] dark:text-white text-lg font-bold">Yetagroupe</h2>
+</div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+<a class="text-[#617c89] dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Mentions Légales</a>
+<a class="text-[#617c89] dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Confidentialité</a>
+<a class="text-[#617c89] dark:text-gray-400 text-sm hover:text-primary transition-colors" href="#">Aide &amp; Support</a>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-[#617c89] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-[#617c89] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-[#617c89] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="border-t border-[#f0f3f4] dark:border-gray-800 pt-8 text-center">
+<p class="text-[#617c89] dark:text-gray-500 text-sm">© 2024 Yetagroupe. Tous droits réservés. Optimisé pour les bars de demain.</p>
+</div>
+</div>
+</footer>
+</body></html>
